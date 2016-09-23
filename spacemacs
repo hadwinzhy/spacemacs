@@ -28,7 +28,10 @@ values."
      emacs-lisp
      git
      html
-     ;; django
+     yaml
+     php
+     javascript
+
      (colors :variables
              colors-enable-rainbow-identifiers nil
              colors-enable-nyan-cat-progress-bar nil )
@@ -39,10 +42,13 @@ values."
             shell-enable-smart-eshell t)
      (spell-checking :variables
                      syntax-checking-enable-tooltips nil)
-     php
+
+     ;;;; framework
+     react
+
      ;;(python :variables
      ;;       python-enable-yapf-format-on-save t)
-   )
+     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -115,7 +121,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 20
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -262,7 +268,17 @@ you should place your code here."
   (global-company-mode)
   (add-hook 'css-mode-hook 'rainbow-mode)
   (global-linum-mode)
-)
+  (setq-default
+   js2-basic-offset 2
+   js-indent-level 2
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2
+   )
+  (push '("\\.js\\'" . react-mode) auto-mode-alist)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
