@@ -23,12 +23,18 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+
+     ;; common
+     chinese
      auto-completion
      better-defaults
      emacs-lisp
      git
      html
      yaml
+
+     ;;;; language
+     ruby
      php
      javascript
 
@@ -271,7 +277,7 @@ you should place your code here."
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)  ;; latext preview
   (add-to-list 'auto-mode-alist '("\\.xtx\\'" . latex-mode))
 
-
+  (global-set-key (kbd "C-x x") ‘call-last-kbd-macro)
   (global-company-mode)
   (add-hook 'css-mode-hook 'rainbow-mode)
   (global-linum-mode)
