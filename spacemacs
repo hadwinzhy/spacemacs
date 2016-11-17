@@ -48,6 +48,9 @@ values."
 
      ;;(python :variables
      ;;       python-enable-yapf-format-on-save t)
+
+     ;;;; private-layer
+     common-code-layer
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -121,10 +124,10 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 20
-                               :weight normal
+                               :size 23
+                               :weight light
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -267,8 +270,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)  ;; latext preview
   (add-to-list 'auto-mode-alist '("\\.xtx\\'" . latex-mode))
-  
- 
+
+
   (global-company-mode)
   (add-hook 'css-mode-hook 'rainbow-mode)
   (global-linum-mode)
