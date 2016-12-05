@@ -25,7 +25,7 @@ values."
      ;; ----------------------------------------------------------------
 
      ;; common
-     chinese
+     ;; chinese
      auto-completion
      better-defaults
      emacs-lisp
