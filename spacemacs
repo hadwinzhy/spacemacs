@@ -278,7 +278,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)  ;; latext preview
   (add-to-list 'auto-mode-alist '("\\.xtx\\'" . latex-mode))
-
+  (global-set-key (kbd "M-\\") 'indent-region)
   (global-set-key (kbd "C-x x") 'call-last-kbd-macro)
   (global-company-mode)
   (add-hook 'css-mode-hook 'rainbow-mode)
